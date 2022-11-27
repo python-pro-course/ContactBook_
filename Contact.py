@@ -42,4 +42,14 @@ class Contact:
                 contact.print_info()
 
     def delete(self):
-        Contact.all.remove(self)3
+        Contact.all.remove(self)
+
+
+
+
+
+
+
+
+
+
