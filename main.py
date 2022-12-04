@@ -23,31 +23,32 @@ def add_contact():
 def search_by_id():
     id = int(input('Введите id контакта: '))
     print('Результаты поиска : ')
-    Contact.search_by_id(id).print_info()
+    contact = Contact.get_by_id(id)
+    Contact.print_info(contact)
     print('Конец результатов поиска')
 
 
 def search():
     line = input('Введите строку для поиска: ')
-    print('Результаты поиска: ')
     Contact.search_contact(line)
     print('Конец результатов поиска')
 
 
 def edit_contact():
     id = int(input('Введите id контакта для редактирования: '))
-    Contact.search_by_id(id).edit(
+    Contact.edit(
         input('Ведите имя: '),
         input('Ведите фамилию: '),
         input('Ведите телефон: '),
-        input('Ведите email: ')
+        input('Ведите email: '),
+        id
     )
     print('Контакт успешно отредактирован')
 
 
 def delete_contact():
     id = int(input('Введите id контакта, который вы хотите удалить: '))
-    Contact.search_by_id(id).delete()
+    Contact.delete(id)
     print('Контакт успешно удален')
 
 
